@@ -27,14 +27,16 @@ describe('fizzBuzzer', function() {
 	it('should return \'fizz\' if the number is divisible by 3', function() {
 
 		const normalCases = [
-			{num: 6, expected: 'fizz'},
+		// should always be key and value pairs in objects
+			{num: 6, expected: 'fizz'}, 
 			{num: 18, expected: 'fizz'},
 			{num: 78, expected: 'fizz'}
 		];
 	// for each input, `fizzBuzzer` should 
 	// produce the expected value
 		normalCases.forEach(function(input) {
-			const answer = fizzBuzzer(input.num);
+			const answer = fizzBuzzer(input.num); 
+			// used input.num to get the key of objects
 			answer.should.equal(input.expected);
 		});
 	});
@@ -42,6 +44,7 @@ describe('fizzBuzzer', function() {
 	it('should return number if not mult of 3 or 5', function() {
     
     const randomNumbers = [
+    // removed square brackets surrounding the numbers
     	1, 
     	2,
     	4, 
@@ -56,6 +59,8 @@ describe('fizzBuzzer', function() {
 	it('should raise error if args not numbers', function() {
 	// range of bad inputs where number is not given
 		const badInputs = [
+		// if you write num or any other word
+		// it would ask you to declare it as a variable, so avoid it
 			null,
 			undefined,
 			'10',
